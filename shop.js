@@ -1,14 +1,52 @@
-for (let i = 0; i < 5; i++) {
-    $(".carousel").append(`<div class="card">
-        <div class="card-img"><div class="img"></div></div>
-        <div class="card-title">Product title</div>
-        <div class="card-subtitle">Product description. Lorem ipsum dolor sit amet, consectetur adipisicing elit.</div>
-        <hr class="card-divider">
-        <div class="card-footer">
-            <div class="card-price"><span>$</span> 123.45</div>
-            <button class="card-btn">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m397.78 316h-205.13a15 15 0 0 1 -14.65-11.67l-34.54-150.48a15 15 0 0 1 14.62-18.36h274.27a15 15 0 0 1 14.65 18.36l-34.6 150.48a15 15 0 0 1 -14.62 11.67zm-193.19-30h181.25l27.67-120.48h-236.6z"></path><path d="m222 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m368.42 450a57.48 57.48 0 1 1 57.48-57.48 57.54 57.54 0 0 1 -57.48 57.48zm0-84.95a27.48 27.48 0 1 0 27.48 27.47 27.5 27.5 0 0 0 -27.48-27.47z"></path><path d="m158.08 165.49a15 15 0 0 1 -14.23-10.26l-25.71-77.23h-47.44a15 15 0 1 1 0-30h58.3a15 15 0 0 1 14.23 10.26l29.13 87.49a15 15 0 0 1 -14.23 19.74z"></path></svg>
-            </button>
-        </div>
-    </div>`)
+const arts = [
+    "https://c02.purpledshub.com/uploads/sites/51/2022/10/sunset-sky-painting-7e73f25.jpg?webp=1&w=1200",
+    // "https://5.imimg.com/data5/SELLER/Default/2022/6/CV/SR/VR/105150937/af1-6-a.jpg",
+    // "https://rukminim2.flixcart.com/image/850/1000/jsdj8nk0/painting/3/y/x/npnt-can-093-perfect-original-imafdyxgkzzydpj9.jpeg?q=90&crop=false"
+]
+
+let total = 11;
+for (let i = 0; i < total; i++) {
+    let stars = getRandomRating()
+    let art = getRandomArt()
+    $(".shop-carousel").append(
+        `<div class="md:w-1/4 pr-4 pl-4 sm:w-1/2">
+            <div class="product-grid shadow-xl">
+                <div class="product-image">
+                    <a href="#">
+<!--                        <img class="pic-1" src="https://www.w3schools.com/bootstrap4/img_avatar4.png">-->
+<!--                        <img class="pic-2" src="https://www.w3schools.com/bootstrap4/img_avatar3.png">-->
+                        <img class="pic-1" src="${art}">
+                        <img class="pic-2" src="${art}">
+                    </a>
+                    <ul class="social">
+                        <li><a href=""><i class="bx bx-search"></i></a></li>
+                        <li><a href=""><i class="bx bxs-shopping-bag-alt"></i></a></li>
+                        <li><a href=""><i class="bx bx-cart"></i></a></li>
+                    </ul>
+                    ${Math.floor(Math.random() * 2) === 1 ? '<span class="product-new-label">New</span>' : ''}
+                </div>
+                <div class="product-content">
+                    <h3 class="title"><a href="#">Art ${i + 1}</a></h3>
+                    <ul class="rating">
+                        <li>
+                            ${Array(Math.floor(stars)).fill('<i class=\'bx bxs-star\'></i>').join('')}
+                            ${stars % 1 === 0.5 ? '<i class=\'bx bxs-star-half\'></i>' : ''}
+                            ${Array(5 - Math.ceil(stars)).fill('<i class=\'bx bx-star\'></i>').join('')}
+                        </li>
+                    </ul>
+                    <div class="price">$15.00
+                        <span>$20.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>`
+    )
+}
+
+function getRandomRating() {
+    return Math.floor(Math.random() * 10) / 2;
+}
+
+function getRandomArt() {
+    return arts[Math.floor(Math.random() * arts.length)];
 }
