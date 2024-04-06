@@ -83,7 +83,7 @@
     background-image: url(https://cdn.pixabay.com/photo/2017/08/07/17/30/alone-2606001_1280.jpg);
 }
 
-.name h2 {
+.name h1 {
     padding-left: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -91,6 +91,6 @@
 
 .name p {
     padding-left: 10px;
-    /*padding-top: 10px;*/
     padding-bottom: 10px;
 }
+
