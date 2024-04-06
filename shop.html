@@ -1,17 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:x-transition="http://www.w3.org/1999/xhtml">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link href="shop.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Document</title>
+
+    <title>Shop</title>
 </head>
-
-<body class="bg-rose-600">
-
-<div class="w-full text-gray-700 bg-white">
+<body>
+<div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
     <div x-data="{ open: false }"
          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
         <div class="p-4 flex flex-row items-center justify-between">
@@ -41,8 +40,7 @@
             <div @click.away="open = false" class="relative" x-data="{ open: false }">
                 <button @click="open = !open"
                         class="flex flex-row items-center w-full px-4 py-2 mt-2 text-sm font-semibold text-left bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:focus:bg-gray-600 dark-mode:hover:bg-gray-600 md:w-auto md:inline md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline">
-                    <i
-                            class='bx bx-user bx-xs'></i>
+                    <i class='bx bx-user bx-xs'></i>
                     <span>Profile</span>
                     <svg fill="currentColor" viewBox="0 0 20 20" :class="{'rotate-180': open, 'rotate-0': !open}"
                          class="inline w-4 h-4 mt-1 ml-1 transition-transform duration-200 transform md:-mt-1">
@@ -58,13 +56,13 @@
                      x-transition:leave-start="transform opacity-100 scale-100"
                      x-transition:leave-end="transform opacity-0 scale-95"
                      class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
-                    <div class="px-2 py-2 bg-white rounded-md shadow">
+                    <div class="px-2 py-2 bg-white rounded-md shadow dark-mode:bg-gray-800">
                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                           href="#"><i class="bx bx-heart"></i>Wishlist</a>
+                           href="#"><i class="bx bx-heart"></i> Wishlist</a>
                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                           href="#"><i class="bx bx-cog"></i>Settings</a>
+                           href="#"><i class="bx bx-cog"></i> Settings</a>
                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                           href="#"><i class="bx bx-log-out bx-flip-horizontal"></i>Logout</a>
+                           href="#"><i class="bx bx-log-out bx-flip-horizontal"></i> Logout</a>
                     </div>
                 </div>
             </div>
@@ -72,46 +70,12 @@
     </div>
 </div>
 
-<div class="slider">
-    <div class="slide">
-        <p>relevant info</p>
-    </div>
-    <div class="slide">
-        <p>relevant info</p>
-    </div>
-    <div class="slide">
-        <p>relevant info</p>
-    </div>
-    <div class="slide">
-        <p>relevant info</p>
-    </div>
-    <div class="slide">
-        <p>relevant info</p>
-    </div>
-</div>
-
-<!-- component -->
-<div class="relative name">
-    <div class="sticky top-0 h-screen flex flex-col items-left justify-top bg-green-400">
-        <h2 class="text-4xl bg-amber-300">Highlights 1</h2>
-        <p class="bg-rose-300">Yay!! 😍</p>
-    </div>
-    <div class="sticky top-0 h-screen flex flex-col items-left justify-top bg-indigo-600 text-white">
-        <h2 class="text-4xl">Highlights 2</h2>
-        <p>What's going on?</p>
-    </div>
-    <div class="sticky top-0 h-screen flex flex-col items-left justify-top bg-purple-600 text-white">
-        <h2 class="text-4xl">Recommendations.</h2>
-        <p>Based on your search.</p>
-    </div>
-    <div class="sticky top-0 h-screen flex flex-col items-left justify-top bg-neutral-800 text-white">
-        <h2 class="text-4xl">Meet the Artists!</h2>
-    </div>
-</div>
+<div class="carousel"></div>
 
 </body>
 
 <script src="main.js" type="module"></script>
+<script src="shop.js" type="module"></script>
 <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 
 </html>
