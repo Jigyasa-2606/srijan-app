@@ -46,14 +46,17 @@ $(".nav").append(`<div class="w-full text-gray-700 bg-white">
                      x-transition:leave="transition ease-in duration-75"
                      x-transition:leave-start="transform opacity-100 scale-100"
                      x-transition:leave-end="transform opacity-0 scale-95"
-                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48">
+                     class="absolute right-0 w-full mt-2 origin-top-right rounded-md shadow-lg md:w-48 z-50">
                     <div class="px-2 py-2 bg-white rounded-md shadow">
                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                           href="#"><i class="bx bx-heart"></i>Wishlist</a>
+                           href="#"><i class="bx bx-cart"></i> Cart</a>
                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                           href="#"><i class="bx bx-cog"></i>Settings</a>
+                           href="#"><i class="bx bx-heart"></i> Wishlist</a>
                         <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                           href="#"><i class="bx bx-log-out bx-flip-horizontal"></i>Logout</a>
+                           href="#"><i class="bx bx-cog"></i> Settings</a>
+                        <a class="block px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+                           href="#"><i class="bx bx-log-out bx-flip-horizontal"></i> Logout</a>
+                           
                     </div>
                 </div>
             </div>

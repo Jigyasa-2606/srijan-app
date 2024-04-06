@@ -4,9 +4,8 @@ const arts = [
     // "https://rukminim2.flixcart.com/image/850/1000/jsdj8nk0/painting/3/y/x/npnt-can-093-perfect-original-imafdyxgkzzydpj9.jpeg?q=90&crop=false"
 ]
 
-let total = 11;
+let total = 12;
 for (let i = 0; i < total; i++) {
-    let stars = getRandomRating()
     let art = getRandomArt()
     $(".shop-carousel").append(
         `<div class="md:w-1/4 pr-4 pl-4 sm:w-1/2">
@@ -27,13 +26,6 @@ for (let i = 0; i < total; i++) {
                 </div>
                 <div class="product-content">
                     <h3 class="title"><a href="#">Art ${i + 1}</a></h3>
-                    <ul class="rating">
-                        <li>
-                            ${Array(Math.floor(stars)).fill('<i class=\'bx bxs-star\'></i>').join('')}
-                            ${stars % 1 === 0.5 ? '<i class=\'bx bxs-star-half\'></i>' : ''}
-                            ${Array(5 - Math.ceil(stars)).fill('<i class=\'bx bx-star\'></i>').join('')}
-                        </li>
-                    </ul>
                     <div class="price">$15.00
                         <span>$20.00</span>
                     </div>
@@ -41,10 +33,6 @@ for (let i = 0; i < total; i++) {
             </div>
         </div>`
     )
-}
-
-function getRandomRating() {
-    return Math.floor(Math.random() * 10) / 2;
 }
 
 function getRandomArt() {
