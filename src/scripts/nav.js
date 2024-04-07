@@ -3,7 +3,7 @@ $("head").append("<link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.
 $(".nav").append(`<div class="w-full text-gray-700 bg-white">
     <div x-data="{ open: false }" class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-">
         <div class="p-4 flex flex-row items-center justify-between">
-            <a class="text-2xl font-semibold tracking-widest text-black uppercase focus:outline-none focus:shadow-outline">Srijan</a>
+            <a class="text-2xl font-semibold tracking-widest text-black uppercase focus:outline-none focus:shadow-outline" href="/index.html">Srijan</a>
             <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
                 <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
                     <path x-show="!open" fill-rule="evenodd"
